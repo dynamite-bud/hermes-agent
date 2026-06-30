@@ -152,6 +152,9 @@ LAZY_DEPS: dict[str, tuple[str, ...]] = {
     # defusedxml only; aiohttp/httpx are core dependencies of every messaging
     # adapter and ship via `platform.discord` / `platform.slack` / etc.
     "platform.wecom_callback": ("defusedxml==0.7.1",),
+    # Voice-call platform — aiohttp serves the carrier webhook endpoint and
+    # the media-stream WebSocket upgrades. Same pin as the `voice-call` extra.
+    "platform.voice_call": ("aiohttp==3.13.4",),
 
     # ─── Terminal backends ─────────────────────────────────────────────────
     "terminal.modal": ("modal==1.3.4",),
