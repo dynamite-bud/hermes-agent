@@ -63,6 +63,7 @@ def test_registers_voice_call_entry(clean_registry):
     assert entry.emoji == "📞"
     assert entry.max_message_length == 1000
     assert "phone call" in entry.platform_hint
+    assert "untrusted call content" in entry.platform_hint
     assert entry.allowed_users_env == "VOICE_CALL_ALLOWED_NUMBERS"
     assert entry.cron_deliver_env_var == "VOICE_CALL_HOME_NUMBER"
 
